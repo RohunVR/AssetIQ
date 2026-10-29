@@ -1,6 +1,6 @@
 // AssetIQ Central API Client
 
-const API_BASE = '/api';
+const API_BASE = 'https://assetiq-1-qkz0.onrender.com/api';
 
 class ApiClient {
   constructor() {
