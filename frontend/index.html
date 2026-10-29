@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AssetIQ | Institutional Laboratory & Asset Management Portal</title>
+  <link rel="icon" type="image/svg+xml" href="/static/assets/logo.svg">
+
+  <!-- Inter & JetBrains Mono Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            navy: {
+              800: '#1e293b',
+              900: '#0f172a',
+              950: '#020617',
+            },
+            academic: {
+              blue: '#1d4ed8',
+              hover: '#1e40af',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Institutional Stylesheet -->
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body class="bg-slate-100 text-slate-900 font-sans antialiased overflow-hidden">
+  <!-- Main Application Root -->
+  <div id="app" class="h-screen w-screen overflow-hidden">
+    <!-- Initial Loading State -->
+    <div class="h-screen w-screen flex flex-col items-center justify-center bg-slate-900 text-white">
+      <img src="/static/assets/logo.svg" alt="AssetIQ Emblem" class="w-16 h-16 animate-pulse mb-4 drop-shadow-lg">
+      <h1 class="text-xl font-bold tracking-tight">AssetIQ Portal</h1>
+      <p class="text-xs text-slate-400 mt-1 uppercase tracking-widest font-mono">Initializing institutional laboratory services...</p>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container"></div>
+
+  <!-- Application Bootstrap -->
+  <script type="module">
+    import { auth } from '/static/js/auth.js';
+    import { router } from '/static/js/router.js';
+
+    // Initialize Auth Session and Route
+    (async () => {
+      try {
+        await auth.init();
+      } catch (err) {
+        console.warn('Initial session check:', err);
+      } finally {
+        router.handleRoute();
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Outer Shield Badge -->
+  <path d="M50 8 L85 22 V50 C85 70 50 92 50 92 C50 92 15 70 15 50 V22 Z" fill="#1E3A8A" stroke="#3B82F6" stroke-width="2.5" />
+  <!-- Inner Shield Accent -->
+  <path d="M50 14 L80 26 V49 C80 66 50 85 50 85 C50 85 20 66 20 49 V26 Z" fill="#0F172A" />
+  <!-- Academic Quill / Microscope Symbol -->
+  <circle cx="50" cy="38" r="9" stroke="#60A5FA" stroke-width="2.5" fill="#1E293B"/>
+  <path d="M50 47 V65" stroke="#60A5FA" stroke-width="3" stroke-linecap="round"/>
+  <path d="M38 65 H62" stroke="#60A5FA" stroke-width="3" stroke-linecap="round"/>
+  <!-- Gear teeth / Asset tracking symbol -->
+  <path d="M42 34 L36 30 M58 34 L64 30 M42 42 L36 46 M58 42 L64 46" stroke="#93C5FD" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- Center Star / Smart IQ indicator -->
+  <circle cx="50" cy="38" r="3" fill="#F59E0B" />
+  <!-- College Foundation Banner Line -->
+  <path d="M30 74 Q50 78 70 74" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/>
+</svg>
