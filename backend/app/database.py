@@ -2,6 +2,12 @@ from sqlalchemy import create_engine, event
 from sqlalchemy.orm import declarative_base, sessionmaker
 from backend.app.config import DATABASE_URL
 
+# Use the PostgreSQL driver declared in requirements.txt when the URL omits one.
+if DATABASE_URL.startswith("postgres://"):
+    DATABASE_URL = "postgresql+psycopg2://" + DATABASE_URL.removeprefix("postgres://")
+elif DATABASE_URL.startswith("postgresql://"):
+    DATABASE_URL = "postgresql+psycopg2://" + DATABASE_URL.removeprefix("postgresql://")
+
 # Connect args for SQLite to handle multi-threaded FastAPI workers
 connect_args = {"check_same_thread": False} if DATABASE_URL.startswith("sqlite") else {}
 
