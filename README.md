@@ -154,6 +154,20 @@ The backend package owns HTTP handling, business workflows, persistence, and sam
 
 ## Installation & Setup
 
+### Environment variables and Vercel
+
+For local development, copy `.env.example` to `.env` and set `SECRET_KEY` to a
+private random value (for example, generate one with `openssl rand -hex 32`).
+The app loads `.env` locally, but values already present in the process
+environment take precedence.
+
+Vercel does not automatically receive a local `.env` file. Add `SECRET_KEY`
+under **Project Settings → Environment Variables** in Vercel. Add
+`DATABASE_URL` there as well if using an external database. The default SQLite
+database is stored in the project directory and is not persistent storage on
+Vercel; use a managed database for data that must survive deployments or
+restarts.
+
 ### Prerequisites
 - **Python 3.10+** (tested on Python 3.12 / 3.14)
 - **pip** and **venv** (included with Python)
